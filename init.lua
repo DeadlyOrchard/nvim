@@ -5,6 +5,7 @@ vim.g.maplocalleader = " "
 
 -- hotkeys
 vim.keymap.set('n', "<leader>z", "za") -- fold
+vim.keymap.set('n', "<leader>t", ":NvimTreeToggle<enter>")
 vim.keymap.set('n', "<leader>grep", ":FzfLua lgrep_curbuf<enter>") -- live grep in current buffer
 vim.keymap.set('n', "<leader>fzf", ":FzfLua<enter>") -- find/replace plugin
 vim.keymap.set('n', "<leader>w", "<C-w>") -- window navigation
