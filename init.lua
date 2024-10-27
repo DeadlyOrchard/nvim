@@ -5,11 +5,18 @@ vim.g.maplocalleader = " "
 
 -- hotkeys
 vim.keymap.set('n', "<leader>z", "za") -- fold
-vim.keymap.set('n', "<leader>t", ":NvimTreeToggle<enter>")
+vim.keymap.set('n', "<leader>tree", ":NvimTreeToggle<enter>")
 vim.keymap.set('n', "<leader>grep", ":FzfLua lgrep_curbuf<enter>") -- live grep in current buffer
 vim.keymap.set('n', "<leader>fzf", ":FzfLua<enter>") -- find/replace plugin
 vim.keymap.set('n', "<leader>w", "<C-w>") -- window navigation
 vim.keymap.set('n', "<leader>git", ":Neogit<enter>") -- git plugin
+
+-- html live-server commands
+vim.keymap.set('n', "<leader>serve", ":te live-server . --browser=firefox<enter>")
+
+-- cmake commands
+vim.keymap.set('n', "<leader>build", ":!cmake --build build<enter>")
+vim.keymap.set('n', "<leader>rebuild", ":!cmake -B build<enter>")
 
 -- disable netrw
 vim.g.loaded_netrw = 1
