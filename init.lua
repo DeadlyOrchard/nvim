@@ -12,7 +12,7 @@ vim.keymap.set('n', "<leader>w", "<C-w>") -- window navigation
 vim.keymap.set('n', "<leader>git", ":Neogit<enter>") -- git plugin
 
 -- html live-server commands
-vim.keymap.set('n', "<leader>serve", ":te live-server . --browser=firefox<enter>")
+vim.keymap.set('n', "<leader>serve", function() require("live-server-nvim").toggle() end)
 
 -- cmake commands
 vim.keymap.set('n', "<leader>build", ":!cmake --build build<enter>")
