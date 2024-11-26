@@ -10,7 +10,7 @@ return {
   config = function()
     local lsp_zero = require("lsp-zero")
 
-    lsp_zero.setup_servers({"ccls", "cmake", "html", "cssls"})
+    lsp_zero.setup_servers({"clangd", "cmake", "html", "cssls"})
 
     lsp_zero.on_attach(function(client, bufnr)
       -- see :help lsp-zero-keybindings to learn the available actions

@@ -1,11 +1,10 @@
 -- leader key
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- hotkeys
+-- frequently used
+vim.keymap.set('n', "<leader>tree", ":NvimTreeToggle")
 vim.keymap.set('n', "<leader>z", "za") -- fold
-vim.keymap.set('n', "<leader>tree", ":NvimTreeToggle<enter>")
 vim.keymap.set('n', "<leader>grep", ":FzfLua lgrep_curbuf<enter>") -- live grep in current buffer
 vim.keymap.set('n', "<leader>fzf", ":FzfLua<enter>") -- find/replace plugin
 vim.keymap.set('n', "<leader>w", "<C-w>") -- window navigation
@@ -15,8 +14,13 @@ vim.keymap.set('n', "<leader>git", ":Neogit<enter>") -- git plugin
 vim.keymap.set('n', "<leader>serve", function() require("live-server-nvim").toggle() end)
 
 -- cmake commands
-vim.keymap.set('n', "<leader>build", ":!cmake --build build<enter>")
-vim.keymap.set('n', "<leader>rebuild", ":!cmake -B build<enter>")
+vim.keymap.set('n', "<leader>b", ":!cmake --build build<enter>")
+vim.keymap.set('n', "<leader>B", ":!cmake -B build<enter>")
+
+-- debugger commands
+vim.keymap.set('n', "<leader>dr", ":DapRestart<enter>")
+vim.keymap.set('n', "<leader>dn", ":DapNew<enter>")
+vim.keymap.set('n', "<leader>db", ":DapToggleBreakpoint<enter>")
 
 -- disable netrw
 vim.g.loaded_netrw = 1
@@ -60,8 +64,6 @@ vim.opt.fillchars = { fold = " " }
 vim.opt.foldmethod = "indent"
 vim.opt.foldenable = false
 vim.opt.foldlevel = 99
-
--- g.markdown_folding = 1 -- enable markdown folding
 
 -- plugin manager
 require("config.lazy")
